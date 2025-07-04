@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
+import DarkModeProvider from './components/DarkModeToggle';
 
 export const metadata: Metadata = {
   title: 'Natnael Darsema | Frontend Developer',
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <DarkModeProvider />
         <Navbar />
         {children}
       </body>

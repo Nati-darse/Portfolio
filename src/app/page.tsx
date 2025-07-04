@@ -1,4 +1,9 @@
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 import ProjectCard from './components/ProjectCard';
+import Skills from './components/Skills';
+import Contact from './components/Contact';
+
 
 const projects = [
   {
@@ -38,25 +43,52 @@ const projects = [
   },
 ];
 
+
+
 export default function Home() {
   return (
     <main>
+       <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-center py-20 px-4"
+      >
       {/* Hero Section */}
-      <section className="text-center py-20">
-        <h1 className="text-4xl font-bold text-blue-600">Natnael Darsema</h1>
-        <p className="mt-4 text-xl">Frontend Developer | React & Next.js | Javascript & Typescript </p>
-        <div className="mt-8 space-x-4">
-          <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-            View Projects
-          </button>
-          <button className="px-6 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50">
-            Contact Me
-          </button>
+      <section className="text-center py-20 px-4">
+        <div className="mx-auto max-w-3xl">
+          {/* Add Avatar (replace with your image) */}
+          <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-blue-100">
+            <Image
+              src="/natu.jpg"  // Replace with your image path (store in /public)
+              alt="Natnael Darsema"
+              width={128}
+              height={128}
+              className="object-cover"
+            />
+          </div>
+          <h1 className="text-4xl font-bold text-blue-700">Natnael Darsema</h1>
+          <p className="mt-4 text-xl text-gray-600">
+            Frontend Developer | Javascript & Typescript | React & Next.js Specialist
+          </p>
+          <div className="mt-8 flex justify-center gap-4">
+            <a
+              href="#projects"
+              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              View Projects
+            </a>
+            <a
+              href="#contact"
+              className="px-6 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
+            >
+              Contact Me
+            </a>
+          </div>
         </div>
       </section>
-
-       {/* Projects Section */}
-       <section id="projects" className="py-16 container mx-auto px-4">
+      {/* Projects Section */}
+      <section id="projects" className="py-16 container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">My Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (
@@ -64,6 +96,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <Skills />
+      <Contact />
+      </motion.section>
     </main>
   );
 }
