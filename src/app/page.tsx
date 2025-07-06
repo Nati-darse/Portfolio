@@ -10,7 +10,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Resume from './components/Resume';
 import Testimonials from './components/Testimonials';
-import Blog from './components/Blog';
+// import Blog from './components/Blog';
 
 const projects = [
   {
@@ -304,34 +304,11 @@ export default function Home() {
             </p>
           </motion.div>
 
-          {/* Filter Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-wrap justify-center gap-4 mb-12"
-          >
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveFilter(category)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeFilter === category
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                    : 'bg-gray-800/70 text-gray-200 hover:bg-gray-700/90'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </motion.div>
-
           <motion.div
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {filteredProjects.map((project) => (
+            {projects.map((project) => (
               <motion.div
                 key={project.title}
                 variants={fadeInUp}
@@ -349,7 +326,7 @@ export default function Home() {
       <Skills />
       <Resume />
       <Testimonials />
-      <Blog />
+      {/* <Blog /> */}
       <Contact />
       <Footer />
     </main>

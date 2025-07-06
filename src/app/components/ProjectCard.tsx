@@ -45,10 +45,16 @@ export default function ProjectCard({
         </span>
       )}
       
-      {/* Project Image/Icon */}
+      {/* Project Image */}
       {image && (
-        <div className="w-16 h-16 mb-4 mx-auto flex items-center justify-center rounded-xl bg-gradient-to-br from-gray-800 to-gray-700 shadow-md">
-          <Image src={image} alt={title} width={48} height={48} className="object-contain" />
+        <div className="w-full h-48 mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-700 shadow-lg">
+          <Image 
+            src={image} 
+            alt={title} 
+            width={400} 
+            height={200} 
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+          />
         </div>
       )}
       
