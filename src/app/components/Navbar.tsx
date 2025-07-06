@@ -49,6 +49,27 @@ export default function Navbar() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
             </Link>
             <Link 
+              href="/#resume" 
+              className="relative group text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300"
+            >
+              Resume
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
+            </Link>
+            <Link 
+              href="/#testimonials" 
+              className="relative group text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300"
+            >
+              Testimonials
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
+            </Link>
+            <Link 
+              href="/#blog" 
+              className="relative group text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300"
+            >
+              Blog
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
+            </Link>
+            <Link 
               href="/#contact" 
               className="relative group text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300"
             >
@@ -96,6 +117,27 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Skills
+            </Link>
+            <Link 
+              href="/#resume" 
+              className="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Resume
+            </Link>
+            <Link 
+              href="/#testimonials" 
+              className="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Testimonials
+            </Link>
+            <Link 
+              href="/#blog" 
+              className="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Blog
             </Link>
             <Link 
               href="/#contact" 

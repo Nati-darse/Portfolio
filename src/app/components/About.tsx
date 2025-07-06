@@ -39,13 +39,13 @@ export default function About() {
           >
             <div className="relative w-80 h-80 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-pulse opacity-20"></div>
-              <div className="absolute inset-4 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-2xl">
+              <div className="absolute inset-4 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
                 <Image
                   src="/photo_2025-07-01_22-31-26-removebg-preview (1).png"
                   alt="Natnael Darsema"
                   width={288}
                   height={288}
-                  className="rounded-full object-cover"
+                  className="rounded-full object-cover w-full h-full"
                 />
               </div>
             </div>
