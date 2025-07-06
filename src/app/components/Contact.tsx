@@ -34,15 +34,15 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-purple-100 to-blue-50">
+    <section id="contact" className="py-20 bg-gradient-to-br from-gray-800 to-gray-900">
       <div className="container mx-auto px-4 flex flex-col items-center">
-        <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-2xl p-10 max-w-xl w-full border border-gray-200">
+        <div className="bg-gray-800/70 backdrop-blur-lg rounded-2xl shadow-2xl p-10 max-w-xl w-full border border-gray-700">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-10 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Get In Touch
           </h2>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block mb-1 font-semibold text-gray-700">Name</label>
+              <label htmlFor="name" className="block mb-1 font-semibold text-gray-200">Name</label>
               <input
                 type="text"
                 id="name"
@@ -50,11 +50,11 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white/80 transition-all duration-300 shadow-sm"
+                className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none bg-gray-700/80 text-gray-200 transition-all duration-300 shadow-sm"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block mb-1 font-semibold text-gray-700">Email</label>
+              <label htmlFor="email" className="block mb-1 font-semibold text-gray-200">Email</label>
               <input
                 type="email"
                 id="email"
@@ -62,11 +62,11 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white/80 transition-all duration-300 shadow-sm"
+                className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none bg-gray-700/80 text-gray-200 transition-all duration-300 shadow-sm"
               />
             </div>
             <div>
-              <label htmlFor="message" className="block mb-1 font-semibold text-gray-700">Message</label>
+              <label htmlFor="message" className="block mb-1 font-semibold text-gray-200">Message</label>
               <textarea
                 id="message"
                 name="message"
@@ -74,7 +74,7 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white/80 transition-all duration-300 shadow-sm"
+                className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none bg-gray-700/80 text-gray-200 transition-all duration-300 shadow-sm"
               ></textarea>
             </div>
             
@@ -86,23 +86,23 @@ export default function Contact() {
             </button>
           </form>
                       <div className="mt-12 text-center">
-              <p className="mb-6 text-gray-700 font-medium">Or reach out directly:</p>
+              <p className="mb-6 text-gray-300 font-medium">Or reach out directly:</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <a href="mailto:natnaeldarsema@gmail.com" className="group flex flex-col items-center p-4 bg-white/60 rounded-lg hover:bg-white/80 transition-all duration-300" aria-label="Email">
+                <a href="mailto:natnaeldarsema@gmail.com" className="group flex flex-col items-center p-4 bg-gray-700/60 rounded-lg hover:bg-gray-700/80 transition-all duration-300" aria-label="Email">
                   <span className="text-3xl mb-2 group-hover:scale-125 transition-transform">✉️</span>
-                  <span className="text-sm font-medium text-gray-700">Email</span>
+                  <span className="text-sm font-medium text-gray-200">Email</span>
                 </a>
-                <a href="https://github.com/Nati-darse" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center p-4 bg-white/60 rounded-lg hover:bg-white/80 transition-all duration-300" aria-label="GitHub">
+                <a href="https://github.com/Nati-darse" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center p-4 bg-gray-700/60 rounded-lg hover:bg-gray-700/80 transition-all duration-300" aria-label="GitHub">
                   <span className="text-3xl mb-2 group-hover:scale-125 transition-transform">🐙</span>
-                  <span className="text-sm font-medium text-gray-700">GitHub</span>
+                  <span className="text-sm font-medium text-gray-200">GitHub</span>
                 </a>
-                <a href="https://linkedin.com/in/nathnael-darsema" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center p-4 bg-white/60 rounded-lg hover:bg-white/80 transition-all duration-300" aria-label="LinkedIn">
+                <a href="https://linkedin.com/in/nathnael-darsema" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center p-4 bg-gray-700/60 rounded-lg hover:bg-gray-700/80 transition-all duration-300" aria-label="LinkedIn">
                   <span className="text-3xl mb-2 group-hover:scale-125 transition-transform">💼</span>
-                  <span className="text-sm font-medium text-gray-700">LinkedIn</span>
+                  <span className="text-sm font-medium text-gray-200">LinkedIn</span>
                 </a>
-                <a href="https://stackoverflow.com/users/your-stackoverflow-id" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center p-4 bg-white/60 rounded-lg hover:bg-white/80 transition-all duration-300" aria-label="Stack Overflow">
+                <a href="https://stackoverflow.com/users/your-stackoverflow-id" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center p-4 bg-gray-700/60 rounded-lg hover:bg-gray-700/80 transition-all duration-300" aria-label="Stack Overflow">
                   <span className="text-3xl mb-2 group-hover:scale-125 transition-transform">📚</span>
-                  <span className="text-sm font-medium text-gray-700">Stack Overflow</span>
+                  <span className="text-sm font-medium text-gray-200">Stack Overflow</span>
                 </a>
               </div>
             </div>

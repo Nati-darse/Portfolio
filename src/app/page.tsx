@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+
 import ProjectCard from './components/ProjectCard';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
@@ -17,10 +17,9 @@ const projects = [
     title: 'Gebeya - Agricultural Marketing Platform',
     description: 'A comprehensive platform connecting rural farmers with urban merchants for agricultural marketing and trade.',
     tags: ['Full-Stack', 'E-commerce', 'Real-time'],
-    category: 'Full-Stack',
     demoUrl: 'https://gebeya-h2bx.vercel.app/',
     codeUrl: 'https://github.com/Nati-darse/Gebeya',
-    image: '/globe.svg',
+    image: '/natu.jpg',
     featured: true,
     features: [
       'User Authentication & Authorization',
@@ -35,7 +34,6 @@ const projects = [
     title: 'ABFG Church Website',
     description: 'Modern church website built with TypeScript, featuring responsive design and interactive components.',
     tags: ['TypeScript', 'Next.js', 'Responsive'],
-    category: 'Frontend',
     demoUrl: '#',
     codeUrl: 'https://github.com/Nati-darse/ABFG-Church-',
     image: '/window.svg',
@@ -52,10 +50,9 @@ const projects = [
     title: 'Event Easy - Event Discovery Platform',
     description: 'A comprehensive event discovery and management platform helping users find and organize events.',
     tags: ['Event Management', 'Social', 'Discovery'],
-    category: 'Full-Stack',
     demoUrl: 'https://event-easy-omega.vercel.app/',
     codeUrl: 'https://github.com/Nati-darse/Event-Easy',
-    image: '/file.svg',
+    image: '/globe.svg',
     features: [
       'Event Discovery & Search',
       'User Registration System',
@@ -69,7 +66,6 @@ const projects = [
     title: 'Eventeasy_F - Event Management System',
     description: 'Advanced event management system with enhanced features for event planning and coordination.',
     tags: ['Advanced', 'Management', 'Planning'],
-    category: 'Full-Stack',
     demoUrl: '#',
     codeUrl: 'https://github.com/Nati-darse/Eventeasy_F',
     image: '/next.svg',
@@ -86,7 +82,6 @@ const projects = [
     title: 'School Management System',
     description: 'Comprehensive school management solution streamlining administrative workflows for educational institutions.',
     tags: ['Education', 'Admin', 'Management'],
-    category: 'Full-Stack',
     demoUrl: '#',
     codeUrl: 'https://github.com/Nati-darse/school-management-system',
     image: '/vercel.svg',
@@ -103,10 +98,9 @@ const projects = [
     title: 'GitHub Clone Project',
     description: 'A GitHub-inspired project showcasing modern web development practices and UI/UX design.',
     tags: ['UI/UX', 'Clone', 'Design'],
-    category: 'Frontend',
     demoUrl: '#',
     codeUrl: 'https://github.com/Nati-darse/GitHubCloneProject',
-    image: '/globe.svg',
+    image: '/file.svg',
     features: [
       'GitHub-like Interface',
       'Repository Management',
@@ -120,7 +114,6 @@ const projects = [
     title: 'UN-ET UOG Charter Website',
     description: 'Official platform for United Nations Ethiopia-University of Gondar partnership and collaboration.',
     tags: ['Partnership', 'Official', 'Collaboration'],
-    category: 'Frontend',
     demoUrl: 'https://un-et-uog-chapter.vercel.app/',
     codeUrl: 'https://github.com/Nati-darse/UN-ET-UOG-Chapter',
     image: '/window.svg',
@@ -137,7 +130,6 @@ const projects = [
     title: 'Misgana Music Player',
     description: 'Modern music streaming platform with intuitive interface and comprehensive music library.',
     tags: ['Music', 'Streaming', 'Entertainment'],
-    category: 'Full-Stack',
     demoUrl: 'https://migana-music-player.vercel.app/',
     codeUrl: 'https://github.com/Nati-darse/Music-Player',
     image: '/file.svg',
@@ -167,16 +159,9 @@ const staggerContainer = {
 };
 
 export default function Home() {
-  const [activeFilter, setActiveFilter] = useState('All');
-  
-  const categories = ['All', 'Full-Stack', 'Frontend'];
-  
-  const filteredProjects = activeFilter === 'All' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 pt-16">
+    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 pt-16">
       {/* Hero Section */}
       <motion.section 
         initial={{ opacity: 0 }}
@@ -200,7 +185,7 @@ export default function Home() {
           >
             <div className="relative w-40 h-40 mx-auto mb-8">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-pulse"></div>
-              <div className="absolute inset-2 bg-white rounded-full flex items-center justify-center overflow-hidden">
+              <div className="absolute inset-2 bg-gray-800 rounded-full flex items-center justify-center overflow-hidden">
                 <Image
                   src="/photo_2025-07-01_22-31-26-removebg-preview (1).png"
                   alt="Natnael Darsema"
@@ -225,7 +210,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-2xl md:text-3xl font-semibold text-gray-700 mb-4"
+            className="text-2xl md:text-3xl font-semibold text-gray-200 mb-4"
           >
             Full-Stack Developer Building Scalable Web Solutions
           </motion.p>
@@ -234,7 +219,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
             Passionate about creating exceptional digital experiences with modern technologies. 
             Specializing in React, Node.js, and TypeScript to build robust, scalable applications 
@@ -256,7 +241,7 @@ export default function Home() {
             </a>
             <a
               href="#contact"
-              className="px-8 py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105"
+              className="px-8 py-4 border-2 border-blue-400 text-blue-400 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105"
             >
               Let&apos;s Connect
             </a>
@@ -267,12 +252,12 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1 }}
-            className="mt-12 flex flex-wrap justify-center gap-4"
+            className="mt-16 mb-32 flex flex-wrap justify-center gap-4"
           >
             {['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js'].map((tech) => (
               <span
                 key={tech}
-                className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 border border-gray-200"
+                className="px-4 py-2 bg-gray-800/80 backdrop-blur-sm rounded-full text-sm font-medium text-gray-200 border border-gray-700"
               >
                 {tech}
               </span>
@@ -314,7 +299,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
               Featured Projects
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               A showcase of my latest work, demonstrating modern web development practices and creative problem-solving
             </p>
           </motion.div>
@@ -334,7 +319,7 @@ export default function Home() {
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   activeFilter === category
                     ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                    : 'bg-white/70 text-gray-700 hover:bg-white/90'
+                    : 'bg-gray-800/70 text-gray-200 hover:bg-gray-700/90'
                 }`}
               >
                 {category}

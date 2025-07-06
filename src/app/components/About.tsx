@@ -11,7 +11,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
+    <section id="about" className="py-20 bg-gradient-to-br from-gray-800 to-gray-900">
       <div className="container mx-auto px-4">
         <motion.div
           initial="initial"
@@ -23,7 +23,7 @@ export default function About() {
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
             About Me
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Passionate developer crafting digital solutions that make a difference
           </p>
         </motion.div>
@@ -39,7 +39,7 @@ export default function About() {
           >
             <div className="relative w-80 h-80 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-pulse opacity-20"></div>
-              <div className="absolute inset-4 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
+              <div className="absolute inset-4 bg-gray-800 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
                 <Image
                   src="/photo_2025-07-01_22-31-26-removebg-preview (1).png"
                   alt="Natnael Darsema"

@@ -18,7 +18,7 @@ export default function RootLayout({
       <head>
         <StructuredData />
       </head>
-      <body className="min-h-screen bg-gray-50">
+      <body className="min-h-screen bg-gray-900">
         <Navbar />
         {children}
       </body>
