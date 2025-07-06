@@ -38,20 +38,27 @@ export default function Contact() {
               Send Message
             </button>
           </form>
-          <div className="mt-12 text-center">
-            <p className="mb-4 text-gray-700 dark:text-gray-300 font-medium">Or reach out directly:</p>
-            <div className="flex justify-center space-x-8">
-              <a href="mailto:your-email@example.com" className="group text-blue-600 dark:text-blue-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-2xl" aria-label="Email">
-                <span className="inline-block group-hover:scale-125 transition-transform">✉️</span>
-              </a>
-              <a href="https://github.com/your-username" target="_blank" className="group text-blue-600 dark:text-blue-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-2xl" aria-label="GitHub">
-                <span className="inline-block group-hover:scale-125 transition-transform">🐙</span>
-              </a>
-              <a href="https://linkedin.com/in/your-username" target="_blank" className="group text-blue-600 dark:text-blue-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-2xl" aria-label="LinkedIn">
-                <span className="inline-block group-hover:scale-125 transition-transform">💼</span>
-              </a>
+                      <div className="mt-12 text-center">
+              <p className="mb-6 text-gray-700 dark:text-gray-300 font-medium">Or reach out directly:</p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="mailto:your-email@example.com" className="group flex flex-col items-center p-4 bg-white/60 dark:bg-gray-800/60 rounded-lg hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all duration-300" aria-label="Email">
+                  <span className="text-3xl mb-2 group-hover:scale-125 transition-transform">✉️</span>
+                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</span>
+                </a>
+                <a href="https://github.com/Nati-darse" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center p-4 bg-white/60 dark:bg-gray-800/60 rounded-lg hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all duration-300" aria-label="GitHub">
+                  <span className="text-3xl mb-2 group-hover:scale-125 transition-transform">🐙</span>
+                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/nathnael-darsema" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center p-4 bg-white/60 dark:bg-gray-800/60 rounded-lg hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all duration-300" aria-label="LinkedIn">
+                  <span className="text-3xl mb-2 group-hover:scale-125 transition-transform">💼</span>
+                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">LinkedIn</span>
+                </a>
+                <a href="https://twitter.com/nati_sha29" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center p-4 bg-white/60 dark:bg-gray-800/60 rounded-lg hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all duration-300" aria-label="Twitter">
+                  <span className="text-3xl mb-2 group-hover:scale-125 transition-transform">🐦</span>
+                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Twitter</span>
+                </a>
+              </div>
             </div>
-          </div>
         </div>
       </div>
     </section>

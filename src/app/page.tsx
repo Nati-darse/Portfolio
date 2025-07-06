@@ -182,7 +182,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-pulse"></div>
               <div className="absolute inset-2 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center">
                 <Image
-                  src="/natu.jpg"
+                  src="/photo_2025-07-01_22-31-26-removebg-preview (1).png"
                   alt="Natnael Darsema"
                   width={144}
                   height={144}

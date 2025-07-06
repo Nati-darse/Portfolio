@@ -41,7 +41,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-pulse opacity-20"></div>
               <div className="absolute inset-4 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-2xl">
                 <Image
-                  src="/natu.jpg"
+                  src="/photo_2025-07-01_22-31-26-removebg-preview (1).png"
                   alt="Natnael Darsema"
                   width={288}
                   height={288}
