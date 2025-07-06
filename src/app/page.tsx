@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import ProjectCard from './components/ProjectCard';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
@@ -16,6 +17,7 @@ const projects = [
     title: 'Gebeya - Agricultural Marketing Platform',
     description: 'A comprehensive platform connecting rural farmers with urban merchants for agricultural marketing and trade.',
     tags: ['Full-Stack', 'E-commerce', 'Real-time'],
+    category: 'Full-Stack',
     demoUrl: 'https://gebeya-h2bx.vercel.app/',
     codeUrl: 'https://github.com/Nati-darse/Gebeya',
     image: '/globe.svg',
@@ -33,6 +35,7 @@ const projects = [
     title: 'ABFG Church Website',
     description: 'Modern church website built with TypeScript, featuring responsive design and interactive components.',
     tags: ['TypeScript', 'Next.js', 'Responsive'],
+    category: 'Frontend',
     demoUrl: '#',
     codeUrl: 'https://github.com/Nati-darse/ABFG-Church-',
     image: '/window.svg',
@@ -49,6 +52,7 @@ const projects = [
     title: 'Event Easy - Event Discovery Platform',
     description: 'A comprehensive event discovery and management platform helping users find and organize events.',
     tags: ['Event Management', 'Social', 'Discovery'],
+    category: 'Full-Stack',
     demoUrl: 'https://event-easy-omega.vercel.app/',
     codeUrl: 'https://github.com/Nati-darse/Event-Easy',
     image: '/file.svg',
@@ -65,6 +69,7 @@ const projects = [
     title: 'Eventeasy_F - Event Management System',
     description: 'Advanced event management system with enhanced features for event planning and coordination.',
     tags: ['Advanced', 'Management', 'Planning'],
+    category: 'Full-Stack',
     demoUrl: '#',
     codeUrl: 'https://github.com/Nati-darse/Eventeasy_F',
     image: '/next.svg',
@@ -81,6 +86,7 @@ const projects = [
     title: 'School Management System',
     description: 'Comprehensive school management solution streamlining administrative workflows for educational institutions.',
     tags: ['Education', 'Admin', 'Management'],
+    category: 'Full-Stack',
     demoUrl: '#',
     codeUrl: 'https://github.com/Nati-darse/school-management-system',
     image: '/vercel.svg',
@@ -97,6 +103,7 @@ const projects = [
     title: 'GitHub Clone Project',
     description: 'A GitHub-inspired project showcasing modern web development practices and UI/UX design.',
     tags: ['UI/UX', 'Clone', 'Design'],
+    category: 'Frontend',
     demoUrl: '#',
     codeUrl: 'https://github.com/Nati-darse/GitHubCloneProject',
     image: '/globe.svg',
@@ -113,6 +120,7 @@ const projects = [
     title: 'UN-ET UOG Charter Website',
     description: 'Official platform for United Nations Ethiopia-University of Gondar partnership and collaboration.',
     tags: ['Partnership', 'Official', 'Collaboration'],
+    category: 'Frontend',
     demoUrl: 'https://un-et-uog-chapter.vercel.app/',
     codeUrl: 'https://github.com/Nati-darse/UN-ET-UOG-Chapter',
     image: '/window.svg',
@@ -129,6 +137,7 @@ const projects = [
     title: 'Misgana Music Player',
     description: 'Modern music streaming platform with intuitive interface and comprehensive music library.',
     tags: ['Music', 'Streaming', 'Entertainment'],
+    category: 'Full-Stack',
     demoUrl: 'https://migana-music-player.vercel.app/',
     codeUrl: 'https://github.com/Nati-darse/Music-Player',
     image: '/file.svg',
@@ -158,6 +167,14 @@ const staggerContainer = {
 };
 
 export default function Home() {
+  const [activeFilter, setActiveFilter] = useState('All');
+  
+  const categories = ['All', 'Full-Stack', 'Frontend'];
+  
+  const filteredProjects = activeFilter === 'All' 
+    ? projects 
+    : projects.filter(project => project.category === activeFilter);
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 pt-16">
       {/* Hero Section */}
@@ -302,11 +319,34 @@ export default function Home() {
             </p>
           </motion.div>
 
+          {/* Filter Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-wrap justify-center gap-4 mb-12"
+          >
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveFilter(category)}
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  activeFilter === category
+                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                    : 'bg-white/70 dark:bg-gray-800/70 text-gray-700 dark:text-gray-300 hover:bg-white/90 dark:hover:bg-gray-800/90'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </motion.div>
+
           <motion.div
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {projects.map((project) => (
+            {filteredProjects.map((project) => (
               <motion.div
                 key={project.title}
                 variants={fadeInUp}

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import DarkModeProvider from './DarkModeToggle';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -84,6 +85,7 @@ export default function Navbar() {
             >
               GitHub
             </a>
+            <DarkModeProvider />
           </div>
 
           {/* Mobile Menu Button */}

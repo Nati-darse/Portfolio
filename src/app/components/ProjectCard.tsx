@@ -113,9 +113,10 @@ export default function ProjectCard({
             href={demoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold shadow hover:scale-105 hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+            aria-label={`View live demo of ${title}`}
+            className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold shadow hover:scale-105 hover:shadow-xl transition-all duration-300 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
-            <span>🌐</span>
+            <span role="img" aria-label="globe">🌐</span>
             Live Demo
           </a>
         )}
@@ -124,9 +125,10 @@ export default function ProjectCard({
             href={codeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 border-2 border-blue-600 text-blue-600 dark:text-blue-300 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105 flex items-center gap-2"
+            aria-label={`View source code of ${title}`}
+            className="px-4 py-2 border-2 border-blue-600 text-blue-600 dark:text-blue-300 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
-            <span>📁</span>
+            <span role="img" aria-label="folder">📁</span>
             View Code
           </a>
         )}
