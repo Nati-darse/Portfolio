@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from './components/Navbar';
-import DarkModeProvider from './components/DarkModeToggle';
 import StructuredData from './components/StructuredData';
 
 export const metadata: Metadata = {
@@ -19,8 +18,7 @@ export default function RootLayout({
       <head>
         <StructuredData />
       </head>
-      <body className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <DarkModeProvider />
+      <body className="min-h-screen bg-gray-50">
         <Navbar />
         {children}
       </body>
