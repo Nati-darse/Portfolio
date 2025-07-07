@@ -10,6 +10,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Resume from './components/Resume';
 import Testimonials from './components/Testimonials';
+import ProjectShowcase from './components/ProjectShowcase';
 // import Blog from './components/Blog';
 
 const projects = [
@@ -304,21 +305,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <motion.div
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {projects.map((project) => (
-              <motion.div
-                key={project.title}
-                variants={fadeInUp}
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <ProjectCard {...project} />
-              </motion.div>
-            ))}
-          </motion.div>
+          <ProjectShowcase projects={projects} />
         </div>
       </motion.section>
 
