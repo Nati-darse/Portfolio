@@ -10,7 +10,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Resume from './components/Resume';
 import Testimonials from './components/Testimonials';
-import CodeRain from './components/CodeRain';
+import ParticleNetwork from './components/ParticleNetwork';
 // import Blog from './components/Blog';
 
 const projects = [
@@ -171,7 +171,7 @@ export default function Home() {
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
       >
         {/* Background Pattern */}
-        <CodeRain />
+        <ParticleNetwork />
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
           <div className="absolute top-40 right-20 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
