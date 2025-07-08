@@ -3,14 +3,14 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-import ProjectCard from './components/ProjectCard';
+import ProjectBook from './components/ProjectBook';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import About from './components/About';
 import Footer from './components/Footer';
 import Resume from './components/Resume';
 import Testimonials from './components/Testimonials';
-import ProjectShowcase from './components/ProjectShowcase';
+import CodeRain from './components/CodeRain';
 // import Blog from './components/Blog';
 
 const projects = [
@@ -171,6 +171,7 @@ export default function Home() {
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
       >
         {/* Background Pattern */}
+        <CodeRain />
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
           <div className="absolute top-40 right-20 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
@@ -213,6 +214,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-2xl md:text-3xl font-semibold text-gray-200 mb-4"
           >
+          
             Full-Stack Developer Building Scalable Web Solutions
           </motion.p>
 
@@ -305,7 +307,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <ProjectShowcase projects={projects} />
+          <ProjectBook projects={projects} />
         </div>
       </motion.section>
 
