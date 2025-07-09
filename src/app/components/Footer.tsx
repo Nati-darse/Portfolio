@@ -91,8 +91,8 @@ export default function Footer() {
             <div className="space-y-2 text-gray-300">
               <p className="flex items-center">
                 <span className="mr-2">📧</span>
-                <a href="mailto:your-email@example.com" className="hover:text-white transition-colors duration-300">
-                  your-email@example.com
+                <a href="natnaeldarsema@gmail.com" className="hover:text-white transition-colors duration-300">
+                  natnaeldarsema@gmail.com
                 </a>
               </p>
               <p className="flex items-center">
