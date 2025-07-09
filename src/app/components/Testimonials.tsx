@@ -94,7 +94,7 @@ export default function Testimonials() {
               </div>
 
               <blockquote className="text-gray-600 dark:text-gray-300 leading-relaxed italic">
-                "{testimonial.content}"
+                &ldquo;{testimonial.content}&rdquo;
               </blockquote>
             </motion.div>
           ))}

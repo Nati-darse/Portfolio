@@ -16,7 +16,7 @@ const CodeRain: React.FC = () => {
     canvas.width = width;
     canvas.height = height;
 
-    let fontSize = 18;
+    const fontSize = 18;
     let columns = Math.floor(width / fontSize);
     let drops = Array(columns).fill(1);
 

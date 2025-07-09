@@ -64,7 +64,7 @@ export default function About() {
                 My Journey
               </h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                I'm a passionate Full-Stack Developer with a deep love for creating innovative web solutions. 
+                I&apos;m a passionate Full-Stack Developer with a deep love for creating innovative web solutions. 
                 My journey in web development began with curiosity and has evolved into a commitment to 
                 building scalable, user-centric applications that solve real-world problems.
               </p>
