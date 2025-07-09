@@ -168,7 +168,7 @@ export default function Resume() {
           className="text-center mt-12"
         >
           <a
-            href="/resume.pdf"
+            href="/Natnael Darsema_  Resume.pdf"
             download
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:scale-105 hover:shadow-2xl transition-all duration-300"
           >
