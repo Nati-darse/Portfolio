@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Resume from './components/Resume';
 import Testimonials from './components/Testimonials';
 import ParticleNetwork from './components/ParticleNetwork';
+import JobCertificates from './components/JobCertificates';
 // import Blog from './components/Blog';
 
 const projects = [
@@ -315,6 +316,7 @@ export default function Home() {
       <Skills />
       <Resume />
       <Testimonials />
+      <JobCertificates />
       {/* <Blog /> */}
       <Contact />
       <Footer />
