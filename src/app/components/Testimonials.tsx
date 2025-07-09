@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export default function Testimonials() {
   const testimonials = [
     {
-      name: 'Sarah Johnson',
+      name: 'Sarah Denbu',
       role: 'Project Manager',
       company: 'TechStart Inc.',
       content: 'Natnael delivered exceptional results on our e-commerce platform. His attention to detail and problem-solving skills are outstanding. The project was completed on time and exceeded our expectations.',
@@ -13,7 +13,7 @@ export default function Testimonials() {
       avatar: '👩‍💼'
     },
     {
-      name: 'Michael Chen',
+      name: 'damtew Getaworash',
       role: 'CEO',
       company: 'InnovateLab',
       content: 'Working with Natnael was a game-changer for our startup. He not only built a robust application but also provided valuable insights on user experience and scalability.',
@@ -29,7 +29,7 @@ export default function Testimonials() {
       avatar: '👩‍💻'
     },
     {
-      name: 'David Thompson',
+      name: 'Dawit Shimels',
       role: 'Senior Developer',
       company: 'CodeCraft Studio',
       content: 'As a fellow developer, I\'m impressed by Natnael\'s clean code practices and modern development approach. He\'s a valuable asset to any development team.',
@@ -109,7 +109,7 @@ export default function Testimonials() {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           <div className="text-center">
-            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">15+</div>
+            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">9+</div>
             <div className="text-gray-600 dark:text-gray-300">Projects Completed</div>
           </div>
           <div className="text-center">
@@ -117,7 +117,7 @@ export default function Testimonials() {
             <div className="text-gray-600 dark:text-gray-300">Client Satisfaction</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-pink-600 dark:text-pink-400 mb-2">2+</div>
+            <div className="text-4xl font-bold text-pink-600 dark:text-pink-400 mb-2">1+</div>
             <div className="text-gray-600 dark:text-gray-300">Years Experience</div>
           </div>
           <div className="text-center">

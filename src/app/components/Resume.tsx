@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Resume() {
   const experience = [
@@ -39,22 +40,25 @@ export default function Resume() {
 
   const certifications = [
     {
-      name: 'React Developer Certification',
-      issuer: 'Meta',
-      date: '2023',
-      link: '#'
+      name: 'Frontend WebDeveloper',
+      issuer: 'ALX',
+      date: '2025',
+      link: 'https://member.theroom.com/alx',
+      image: '/certificates/front-end-web-development-certificate-natnael-darsema.png' // Add your certificate image path here
     },
     {
       name: 'JavaScript Algorithms and Data Structures',
       issuer: 'freeCodeCamp',
       date: '2023',
-      link: '#'
+      link: '#',
+      image: '/certificates/javascript-certificate.jpg' // Add your certificate image path here
     },
     {
       name: 'Responsive Web Design',
       issuer: 'freeCodeCamp',
       date: '2022',
-      link: '#'
+      link: '#',
+      image: '/certificates/web-design-certificate.jpg' // Add your certificate image path here
     }
   ];
 
@@ -148,10 +152,36 @@ export default function Resume() {
               </h3>
               <div className="space-y-4">
                 {certifications.map((cert, index) => (
-                  <div key={index} className="p-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                    <h4 className="font-semibold text-gray-800 dark:text-gray-200">{cert.name}</h4>
-                    <p className="text-blue-600 dark:text-blue-400 text-sm">{cert.issuer}</p>
-                    <p className="text-gray-500 dark:text-gray-400 text-sm">{cert.date}</p>
+                  <div key={index} className="p-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg border border-blue-200 dark:border-blue-800 hover:shadow-lg transition-shadow duration-300">
+                    <div className="flex items-start gap-4">
+                      {cert.image && (
+                        <div className="flex-shrink-0">
+                          <Image
+                            src={cert.image}
+                            alt={`${cert.name} certificate`}
+                            width={80}
+                            height={60}
+                            className="rounded-lg object-cover border border-gray-200 dark:border-gray-600 cursor-pointer hover:scale-105 transition-transform duration-200"
+                            onClick={() => window.open(cert.image, '_blank')}
+                          />
+                        </div>
+                      )}
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-gray-800 dark:text-gray-200">{cert.name}</h4>
+                        <p className="text-blue-600 dark:text-blue-400 text-sm">{cert.issuer}</p>
+                        <p className="text-gray-500 dark:text-gray-400 text-sm">{cert.date}</p>
+                        {cert.link && cert.link !== '#' && (
+                          <a
+                            href={cert.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 dark:text-blue-400 text-sm hover:underline mt-1 inline-block"
+                          >
+                            View Certificate →
+                          </a>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
