@@ -9,9 +9,10 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Resume from './components/Resume';
 import Testimonials from './components/Testimonials';
-import ParticleNetwork from './components/ParticleNetwork';
 import JobCertificates from './components/JobCertificates';
-import AnimatedAvatar from './components/AnimatedAvatar';
+import WalkingAvatar from './components/WalkingAvatar';
+import TypewriterText from './components/TypewriterText';
+import React, { useState } from 'react';
 // import Blog from './components/Blog';
 
 const projects = [
@@ -161,6 +162,14 @@ const staggerContainer = {
 };
 
 export default function Home() {
+  // Sequential typewriter logic, triggered after avatar arrives
+  const [showName, setShowName] = useState(false);
+  const [showTagline, setShowTagline] = useState(false);
+
+  // When avatar arrives, start name typing
+  const handleAvatarArrive = () => setShowName(true);
+  // When name finishes typing, show tagline
+  const handleNameTyped = () => setShowTagline(true);
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 pt-16">
@@ -171,42 +180,32 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
       >
-        {/* Background Pattern */}
-        <ParticleNetwork />
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-40 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
-        </div>
-
+        {/* Walking Avatar */}
+        <WalkingAvatar onArrive={handleAvatarArrive} />
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-8"
-          >
-            <AnimatedAvatar />
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6"
-          >
-            Natnael Darsema
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-2xl md:text-3xl font-semibold text-gray-200 mb-4"
-          >
-          
-            Full-Stack Developer Building Scalable Web Solutions
-          </motion.p>
+          {/* Digital nameplate area for typewriter text */}
+          <div className="mt-32 mb-8">
+            {showName && (
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6"
+              >
+                <TypewriterText text="Natnael Darsema" speed={70} onTyped={handleNameTyped} />
+              </motion.h1>
+            )}
+            {showTagline && (
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-2xl md:text-3xl font-semibold text-gray-200 mb-4"
+              >
+                <TypewriterText text="Full-Stack Developer Building Scalable Web Solutions" speed={30} />
+              </motion.p>
+            )}
+          </div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
