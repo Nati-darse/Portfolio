@@ -22,7 +22,7 @@ const projects = [
     tags: ['Full-Stack', 'E-commerce', 'Real-time'],
     demoUrl: 'https://gebeya-h2bx.vercel.app/',
     codeUrl: 'https://github.com/Nati-darse/Gebeya',
-    image: '/gebeya.png',
+    image: '/projects/gebeya.png',
     featured: true,
     features: [
       'User Authentication & Authorization',
@@ -39,7 +39,7 @@ const projects = [
     tags: ['Advanced', 'Management', 'Planning'],
     demoUrl: '#',
     codeUrl: 'https://github.com/Nati-darse/Eventeasy_F',
-    image: '/event.png',
+    image: '/projects/event.png',
     features: [
       'Advanced Event Planning',
       'Team Collaboration',

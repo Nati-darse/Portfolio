@@ -67,7 +67,7 @@ const ProjectBook: React.FC<ProjectBookProps> = ({ projects }) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="relative w-72 h-96 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden border-4 border-gray-700"
+            className="relative w-full max-w-xl aspect-[4/3] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden border-4 border-gray-700"
             style={{ perspective: 1200 }}
           >
             <Image
