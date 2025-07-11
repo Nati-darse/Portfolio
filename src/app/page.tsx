@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import ProjectBook from './components/ProjectBook';
@@ -12,6 +11,7 @@ import Resume from './components/Resume';
 import Testimonials from './components/Testimonials';
 import ParticleNetwork from './components/ParticleNetwork';
 import JobCertificates from './components/JobCertificates';
+import AnimatedAvatar from './components/AnimatedAvatar';
 // import Blog from './components/Blog';
 
 const projects = [
@@ -186,18 +186,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8"
           >
-            <div className="relative w-40 h-40 mx-auto mb-8">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-pulse"></div>
-              <div className="absolute inset-2 bg-gray-800 rounded-full flex items-center justify-center overflow-hidden">
-                <Image
-                  src="/photo_2025-07-01_22-31-26-removebg-preview (1).png"
-                  alt="Natnael Darsema"
-                  width={144}
-                  height={144}
-                  className="rounded-full object-cover w-full h-full"
-                />
-              </div>
-            </div>
+            <AnimatedAvatar />
           </motion.div>
 
           <motion.h1
