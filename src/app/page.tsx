@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 import Resume from './components/Resume';
 import Testimonials from './components/Testimonials';
 import JobCertificates from './components/JobCertificates';
-import WalkingAvatar from './components/WalkingAvatar';
+import SittingAvatar from './components/WalkingAvatar';
 import TypewriterText from './components/TypewriterText';
 import React, { useState } from 'react';
 // import Blog from './components/Blog';
@@ -162,55 +162,32 @@ const staggerContainer = {
 };
 
 export default function Home() {
-  // Sequential typewriter logic, triggered after avatar arrives
-  const [showName, setShowName] = useState(false);
   const [showTagline, setShowTagline] = useState(false);
-
-  // When avatar arrives, start name typing
-  const handleAvatarArrive = () => setShowName(true);
-  // When name finishes typing, show tagline
   const handleNameTyped = () => setShowTagline(true);
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 pt-16">
       {/* Hero Section */}
-      <motion.section 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      >
-        {/* Walking Avatar */}
-        <WalkingAvatar onArrive={handleAvatarArrive} />
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          {/* Digital nameplate area for typewriter text */}
-          <div className="mt-32 mb-8">
-            {showName && (
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6"
-              >
-                <TypewriterText text="Natnael Darsema" speed={70} onTyped={handleNameTyped} />
-              </motion.h1>
-            )}
-            {showTagline && (
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-2xl md:text-3xl font-semibold text-gray-200 mb-4"
-              >
-                <TypewriterText text="Full-Stack Developer Building Scalable Web Solutions" speed={30} />
-              </motion.p>
-            )}
-          </div>
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+        {/* Sitting Avatar above the text */}
+        <div className="w-full flex justify-center mt-12 mb-2">
+          <SittingAvatar />
+        </div>
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-2">
+          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
+            <TypewriterText text="Natnael Darsema" speed={90} onTyped={handleNameTyped} />
+          </h1>
+          {showTagline && (
+            <p className="text-2xl md:text-3xl font-semibold text-gray-200 mb-4">
+              <TypewriterText text="Full-Stack Developer Building Scalable Web Solutions" speed={45} />
+            </p>
+          )}
+        </div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 1 }}
             className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
             Passionate about creating exceptional digital experiences with modern technologies. 
@@ -255,24 +232,7 @@ export default function Home() {
               </span>
             ))}
           </motion.div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-          className="absolute bottom-16 left-1/2 transform -translate-x-1/2"
-        >
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1 h-3 bg-gray-400 rounded-full mt-2"
-            />
-          </div>
-        </motion.div>
-      </motion.section>
+        </section>
 
       {/* Projects Section */}
       <motion.section 
