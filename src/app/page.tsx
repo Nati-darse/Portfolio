@@ -22,7 +22,7 @@ const projects = [
     tags: ['Full-Stack', 'E-commerce', 'Real-time'],
     demoUrl: 'https://gebeya-h2bx.vercel.app/',
     codeUrl: 'https://github.com/Nati-darse/Gebeya',
-    image: '/natu.jpg',
+    image: '/gebeya.png',
     featured: true,
     features: [
       'User Authentication & Authorization',
@@ -32,6 +32,22 @@ const projects = [
       'Order Tracking System'
     ],
     techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'JavaScript']
+  },
+  {
+    title: 'Eventeasy_F - Event Management System',
+    description: 'Advanced event management system with enhanced features for event planning and coordination.',
+    tags: ['Advanced', 'Management', 'Planning'],
+    demoUrl: '#',
+    codeUrl: 'https://github.com/Nati-darse/Eventeasy_F',
+    image: '/event.png',
+    features: [
+      'Advanced Event Planning',
+      'Team Collaboration',
+      'Calendar Integration',
+      'Resource Management',
+      'Analytics Dashboard'
+    ],
+    techStack: ['React', 'Express', 'JavaScript', 'CSS']
   },
   {
     title: 'ABFG Church Website',
@@ -49,38 +65,8 @@ const projects = [
     ],
     techStack: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS']
   },
-  {
-    title: 'Event Easy - Event Discovery Platform',
-    description: 'A comprehensive event discovery and management platform helping users find and organize events.',
-    tags: ['Event Management', 'Social', 'Discovery'],
-    demoUrl: 'https://event-easy-omega.vercel.app/',
-    codeUrl: 'https://github.com/Nati-darse/Event-Easy',
-    image: '/globe.svg',
-    features: [
-      'Event Discovery & Search',
-      'User Registration System',
-      'Event Creation & Management',
-      'Real-time Updates',
-      'Social Features'
-    ],
-    techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'JavaScript']
-  },
-  {
-    title: 'Eventeasy_F - Event Management System',
-    description: 'Advanced event management system with enhanced features for event planning and coordination.',
-    tags: ['Advanced', 'Management', 'Planning'],
-    demoUrl: '#',
-    codeUrl: 'https://github.com/Nati-darse/Eventeasy_F',
-    image: '/next.svg',
-    features: [
-      'Advanced Event Planning',
-      'Team Collaboration',
-      'Calendar Integration',
-      'Resource Management',
-      'Analytics Dashboard'
-    ],
-    techStack: ['React', 'Express', 'JavaScript', 'CSS']
-  },
+
+
   {
     title: 'School Management System',
     description: 'Comprehensive school management solution streamlining administrative workflows for educational institutions.',

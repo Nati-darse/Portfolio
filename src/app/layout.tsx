@@ -4,8 +4,8 @@ import Navbar from './components/Navbar';
 import StructuredData from './components/StructuredData';
 
 export const metadata: Metadata = {
-  title: 'Natnael Darsema | Frontend Developer',
-  description: 'Portfolio built with Next.js',
+  title: 'Natnael Darsema | Website Developer',
+  description: 'Portfolio of Natnael darsema, a website developer',
 };
 
 export default function RootLayout({

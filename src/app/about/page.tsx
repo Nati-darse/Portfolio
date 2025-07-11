@@ -14,7 +14,7 @@ export default function About() {
               taught me how to collaborate with teams and deliver user-centric solutions.
             </p>
             <p>
-              When not coding, I’m hiking or exploring Ethiopian jazz music.
+              When not coding, I’ll go to church, pray and listen to music.
             </p>
           </div>
           <div className="space-y-4">
