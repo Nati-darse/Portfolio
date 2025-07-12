@@ -50,6 +50,22 @@ const projects = [
     techStack: ['React', 'Express', 'JavaScript', 'CSS']
   },
   {
+    title: 'UN-ET UOG Charter Website',
+    description: 'Official platform for United Nations Ethiopia-University of Gondar partnership and collaboration.',
+    tags: ['Partnership', 'Official', 'Collaboration'],
+    demoUrl: 'https://un-et-uog-chapter.vercel.app/',
+    codeUrl: 'https://github.com/Nati-darse/UN-ET-UOG-Chapter',
+    image: '/projects/un.png',
+    features: [
+      'Partnership Information',
+      'Event Management',
+      'Resource Sharing',
+      'Contact Forms',
+      'News Updates'
+    ],
+    techStack: ['React', 'Tailwind CSS', 'JavaScript']
+  },
+  {
     title: 'ABFG Church Website',
     description: 'Modern church website built with TypeScript, featuring responsive design and interactive components.',
     tags: ['TypeScript', 'Next.js', 'Responsive'],
@@ -98,22 +114,6 @@ const projects = [
       'Modern UI Components'
     ],
     techStack: ['React', 'JavaScript', 'CSS', 'HTML']
-  },
-  {
-    title: 'UN-ET UOG Charter Website',
-    description: 'Official platform for United Nations Ethiopia-University of Gondar partnership and collaboration.',
-    tags: ['Partnership', 'Official', 'Collaboration'],
-    demoUrl: 'https://un-et-uog-chapter.vercel.app/',
-    codeUrl: 'https://github.com/Nati-darse/UN-ET-UOG-Chapter',
-    image: '/window.svg',
-    features: [
-      'Partnership Information',
-      'Event Management',
-      'Resource Sharing',
-      'Contact Forms',
-      'News Updates'
-    ],
-    techStack: ['React', 'Tailwind CSS', 'JavaScript']
   },
   {
     title: 'Misgana Music Player',
