@@ -17,27 +17,10 @@ import React, { useState } from 'react';
 
 const projects = [
   {
-    title: 'Gebeya - Agricultural Marketing Platform',
-    description: 'A comprehensive platform connecting rural farmers with urban merchants for agricultural marketing and trade.',
-    tags: ['Full-Stack', 'E-commerce', 'Real-time'],
-    demoUrl: 'https://gebeya-h2bx.vercel.app/',
-    codeUrl: 'https://github.com/Nati-darse/Gebeya',
-    image: '/projects/gebeya.png',
-    featured: true,
-    features: [
-      'User Authentication & Authorization',
-      'Real-time Chat System',
-      'Payment Integration',
-      'Product Management',
-      'Order Tracking System'
-    ],
-    techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'JavaScript']
-  },
-  {
     title: 'Eventeasy_F - Event Management System',
     description: 'Advanced event management system with enhanced features for event planning and coordination.',
     tags: ['Advanced', 'Management', 'Planning'],
-    demoUrl: '#',
+    demoUrl: 'https://eventeasy-f.vercel.app/',
     codeUrl: 'https://github.com/Nati-darse/Eventeasy_F',
     image: '/projects/event.png',
     features: [
@@ -66,12 +49,30 @@ const projects = [
     techStack: ['React', 'Tailwind CSS', 'JavaScript']
   },
   {
+    title: 'Gebeya - Agricultural Marketing Platform',
+    description: 'A comprehensive platform connecting rural farmers with urban merchants for agricultural marketing and trade.',
+    tags: ['Full-Stack', 'E-commerce', 'Real-time'],
+    demoUrl: 'https://gebeya-h2bx.vercel.app/',
+    codeUrl: 'https://github.com/Nati-darse/Gebeya',
+    image: '/projects/gebeya.png',
+    featured: true,
+    features: [
+      'User Authentication & Authorization',
+      'Real-time Chat System',
+      'Payment Integration',
+      'Product Management',
+      'Order Tracking System'
+    ],
+    techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'JavaScript']
+  },
+ 
+  {
     title: 'ABFG Church Website',
     description: 'Modern church website built with TypeScript, featuring responsive design and interactive components.',
     tags: ['TypeScript', 'Next.js', 'Responsive'],
-    demoUrl: '#',
+    demoUrl: 'https://alembankfullgospelchurch.vercel.app/',
     codeUrl: 'https://github.com/Nati-darse/ABFG-Church-',
-    image: '/window.svg',
+    image: '/projects/church.png',
     features: [
       'Responsive Design',
       'Interactive Components',

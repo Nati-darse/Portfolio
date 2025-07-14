@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 
 export default function Testimonials() {
   const testimonials = [
-    {
-      name: 'Sarah Denbu',
-      role: 'Project Manager',
-      company: 'TechStart Inc.',
-      content: 'Natnael delivered exceptional results on our e-commerce platform. His attention to detail and problem-solving skills are outstanding. The project was completed on time and exceeded our expectations.',
-      rating: 5,
-      avatar: '👩‍💼'
-    },
+    // {
+    //   name: 'Sarah Denbu',
+    //   role: 'Project Manager',
+    //   company: 'TechStart Inc.',
+    //   content: 'Natnael delivered exceptional results on our e-commerce platform. His attention to detail and problem-solving skills are outstanding. The project was completed on time and exceeded our expectations.',
+    //   rating: 5,
+    //   avatar: '👩‍💼'
+    // },
     {
       name: 'damtew Getaworash',
       role: 'CEO',
@@ -20,14 +20,14 @@ export default function Testimonials() {
       rating: 5,
       avatar: '👨‍💼'
     },
-    {
-      name: 'Emily Rodriguez',
-      role: 'Marketing Director',
-      company: 'Digital Solutions Co.',
-      content: 'Natnael\'s technical expertise and communication skills made our collaboration seamless. He transformed our vision into a beautiful, functional website that our users love.',
-      rating: 5,
-      avatar: '👩‍💻'
-    },
+    // {
+    //   name: 'Emily Rodriguez',
+    //   role: 'Marketing Director',
+    //   company: 'Digital Solutions Co.',
+    //   content: 'Natnael\'s technical expertise and communication skills made our collaboration seamless. He transformed our vision into a beautiful, functional website that our users love.',
+    //   rating: 5,
+    //   avatar: '👩‍💻'
+    // },
     {
       name: 'Dawit Shimels',
       role: 'Senior Developer',

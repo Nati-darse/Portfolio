@@ -13,7 +13,7 @@ export default function JobCertificates() {
       feedback: 'Exceptional work on our e-commerce platform. Natnael delivered a robust, scalable solution that exceeded our expectations. The project was completed on time and within budget.',
       rating: 5,
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      projectValue: '$15,000'
+      projectValue: '$'
     },
     {
       projectName: 'Church Website Redesign',
@@ -23,7 +23,7 @@ export default function JobCertificates() {
       feedback: 'Natnael transformed our outdated website into a modern, responsive platform. His attention to detail and understanding of our needs was outstanding.',
       rating: 5,
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-      projectValue: '$8,500'
+      projectValue: '$'
     },
     {
       projectName: 'Event Management System',
@@ -33,7 +33,7 @@ export default function JobCertificates() {
       feedback: 'The event management system Natnael built for us is intuitive and powerful. Our users love the new features and improved user experience.',
       rating: 5,
       technologies: ['React', 'Express', 'MongoDB', 'Socket.io'],
-      projectValue: '$12,000'
+      projectValue: '$'
     },
     {
       projectName: 'School Management Platform',
@@ -43,7 +43,7 @@ export default function JobCertificates() {
       feedback: 'Natnael created a comprehensive school management system that streamlined our administrative processes. The system is reliable and user-friendly.',
       rating: 5,
       technologies: ['React', 'Node.js', 'PostgreSQL', 'JWT'],
-      projectValue: '$20,000'
+      projectValue: '$'
     }
   ];
 
