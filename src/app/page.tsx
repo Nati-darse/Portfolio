@@ -38,7 +38,7 @@ const projects = [
     tags: ['Partnership', 'Official', 'Collaboration'],
     demoUrl: 'https://un-et-uog-chapter.vercel.app/',
     codeUrl: 'https://github.com/Nati-darse/UN-ET-UOG-Chapter',
-    image: '/projects/un.png',
+    image: '/projects/UN.png',
     features: [
       'Partnership Information',
       'Event Management',
