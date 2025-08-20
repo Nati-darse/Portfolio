@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import CodeBackground from './CodeBackground';
 
 export default function JobCertificates() {
   const jobCertificates = [
@@ -56,14 +57,17 @@ export default function JobCertificates() {
   };
 
   return (
-    <section id="job-certificates" className="py-20 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+    <section id="job-certificates" className="py-20 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
+      <div className="dark:block hidden">
+        <CodeBackground />
+      </div>
       <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 relative z-10"
         >
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-4">
             Job Completion Certificates
@@ -73,7 +77,7 @@ export default function JobCertificates() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8 relative z-10">
           {jobCertificates.map((cert, index) => (
             <motion.div
               key={index}
@@ -81,11 +85,12 @@ export default function JobCertificates() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700 hover:scale-105 transition-transform duration-300"
+              className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700 hover:scale-105 hover:border-green-500/50 transition-all duration-500 group"
             >
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-blue-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="flex flex-col lg:flex-row gap-6">
                 {/* Certificate Image */}
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 relative z-10">
                   <div className="relative w-48 h-32 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg border-2 border-blue-200 dark:border-blue-700 overflow-hidden">
                     <Image
                       src={cert.certificate}
@@ -102,7 +107,7 @@ export default function JobCertificates() {
                 </div>
 
                 {/* Project Details */}
-                <div className="flex-1">
+                <div className="flex-1 relative z-10">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">
                       {cert.projectName}
