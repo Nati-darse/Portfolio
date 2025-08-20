@@ -11,14 +11,18 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-gray-800 to-gray-900">
+    <section id="about" className="py-20 bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
+      {/* Animated border gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 animate-pulse"></div>
+      <div className="absolute inset-[1px] bg-gradient-to-br from-gray-800 to-gray-900"></div>
+      
       <div className="container mx-auto px-4">
         <motion.div
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="text-center mb-16"
+          className="text-center mb-16 relative z-10"
         >
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
             About Me
@@ -28,7 +32,7 @@ export default function About() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto relative z-10">
           {/* Image Section */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
@@ -38,7 +42,7 @@ export default function About() {
             className="relative"
           >
             <div className="relative w-80 h-80 mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-pulse opacity-20"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-pulse opacity-30 blur-xl"></div>
               <div className="absolute inset-4 bg-gray-800 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
                 <Image
                   src="/photo_2025-07-01_22-31-26-removebg-preview (1).png"
@@ -78,6 +82,7 @@ export default function About() {
             {/* Key Highlights */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="flex items-center mb-2">
                   <span className="text-2xl mr-3">🎯</span>
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200">Problem Solver</h4>
@@ -88,6 +93,7 @@ export default function About() {
               </div>
               
               <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-blue-500/10 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="flex items-center mb-2">
                   <span className="text-2xl mr-3">🚀</span>
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200">Fast Learner</h4>
@@ -98,6 +104,7 @@ export default function About() {
               </div>
               
               <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="flex items-center mb-2">
                   <span className="text-2xl mr-3">🤝</span>
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200">Team Player</h4>
@@ -108,6 +115,7 @@ export default function About() {
               </div>
               
               <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-orange-500/10 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="flex items-center mb-2">
                   <span className="text-2xl mr-3">💡</span>
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200">Innovative</h4>

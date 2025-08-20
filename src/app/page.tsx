@@ -153,7 +153,7 @@ export default function Home() {
   const handleNameTyped = () => setShowTagline(true);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 pt-16">
+    <main className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 pt-16 transition-all duration-500">
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
         {/* Sitting Avatar above the text */}
@@ -165,7 +165,7 @@ export default function Home() {
             <TypewriterText text="Natnael Darsema" speed={90} onTyped={handleNameTyped} />
           </h1>
           {showTagline && (
-            <p className="text-2xl md:text-3xl font-semibold text-gray-200 mb-4">
+            <p className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-200 mb-4">
               <TypewriterText text="Full-Stack Developer Building Scalable Web Solutions" speed={45} />
             </p>
           )}
@@ -175,7 +175,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1 }}
-            className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
             Passionate about creating exceptional digital experiences with modern technologies. 
             Specializing in React, Node.js, and TypeScript to build robust, scalable applications 
@@ -197,7 +197,7 @@ export default function Home() {
             </a>
             <a
               href="#contact"
-              className="px-8 py-4 border-2 border-blue-400 text-blue-400 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105"
+              className="px-8 py-4 border-2 border-blue-400 text-blue-400 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               Let&apos;s Connect
             </a>
@@ -213,7 +213,7 @@ export default function Home() {
             {['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js'].map((tech) => (
               <span
                 key={tech}
-                className="px-4 py-2 bg-gray-800/80 backdrop-blur-sm rounded-full text-sm font-medium text-gray-200 border border-gray-700"
+                className="px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-700 hover:border-blue-400 transition-all duration-300 hover:scale-105"
               >
                 {tech}
               </span>
@@ -233,12 +233,12 @@ export default function Home() {
         <div className="container mx-auto max-w-6xl">
           <motion.div
             variants={fadeInUp}
-            className="text-center mb-16"
+            className="text-center mb-16 relative z-10"
           >
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
               Featured Projects
             </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               A showcase of my latest work, demonstrating modern web development practices and creative problem-solving
             </p>
           </motion.div>

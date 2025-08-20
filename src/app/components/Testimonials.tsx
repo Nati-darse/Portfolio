@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import CodeBackground from './CodeBackground';
 
 export default function Testimonials() {
   const testimonials = [
@@ -47,14 +48,17 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800">
+    <section id="testimonials" className="py-20 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
+      <div className="dark:block hidden">
+        <CodeBackground />
+      </div>
       <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 relative z-10"
         >
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
             What People Say
@@ -64,7 +68,7 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 relative z-10">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -72,8 +76,9 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700 hover:scale-105 transition-transform duration-300"
+              className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700 hover:scale-105 hover:border-purple-500/50 transition-all duration-500 group"
             >
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="flex items-center mb-6">
                 <div className="text-4xl mr-4">{testimonial.avatar}</div>
                 <div>

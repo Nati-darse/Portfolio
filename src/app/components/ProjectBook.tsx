@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight, FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
+import CodeBackground from './CodeBackground';
+
 interface Project {
   title: string;
   description: string;
@@ -56,9 +58,10 @@ const ProjectBook: React.FC<ProjectBookProps> = ({ projects }) => {
   };
 
   return (
-    <section className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 py-8">
+    <section className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 py-8 relative">
+      <CodeBackground />
       {/* Left: Animated Project Image as Book Page */}
-      <div className="md:w-1/2 w-full flex items-center justify-center">
+      <div className="md:w-1/2 w-full flex items-center justify-center relative z-10">
         <AnimatePresence custom={direction} mode="wait">
           <motion.div
             key={projects[page].title}
@@ -67,7 +70,7 @@ const ProjectBook: React.FC<ProjectBookProps> = ({ projects }) => {
             initial="initial"
             animate="animate"
             exit="exit"
-                         className="relative w-full max-w-2xl aspect-[16/9] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden border-2 border-gray-700"
+            className="relative w-full max-w-2xl aspect-[16/9] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden border-2 border-gray-700 hover:border-blue-500/50 transition-all duration-500"
             style={{ perspective: 1200 }}
           >
             <Image
@@ -77,18 +80,18 @@ const ProjectBook: React.FC<ProjectBookProps> = ({ projects }) => {
               className="object-cover rounded-2xl"
               style={{ zIndex: 1 }}
             />
-            <div className="absolute inset-0 rounded-2xl border-2 border-blue-500 opacity-20 pointer-events-none" />
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           </motion.div>
         </AnimatePresence>
       </div>
 
       {/* Right: Project Details */}
-      <div className="md:w-1/2 w-full flex flex-col items-start justify-center max-w-xl">
+      <div className="md:w-1/2 w-full flex flex-col items-start justify-center max-w-xl relative z-10">
         <div className="flex items-center gap-4 mb-4">
           <button
             aria-label="Previous project"
             onClick={() => paginate(-1)}
-            className="p-2 rounded-full bg-gray-800 hover:bg-blue-700 text-blue-400 hover:text-white transition"
+            className="p-2 rounded-full bg-gray-800 hover:bg-blue-700 text-blue-400 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg"
           >
             <FaChevronLeft size={24} />
           </button>
@@ -96,7 +99,7 @@ const ProjectBook: React.FC<ProjectBookProps> = ({ projects }) => {
           <button
             aria-label="Next project"
             onClick={() => paginate(1)}
-            className="p-2 rounded-full bg-gray-800 hover:bg-blue-700 text-blue-400 hover:text-white transition"
+            className="p-2 rounded-full bg-gray-800 hover:bg-blue-700 text-blue-400 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg"
           >
             <FaChevronRight size={24} />
           </button>
@@ -130,7 +133,7 @@ const ProjectBook: React.FC<ProjectBookProps> = ({ projects }) => {
               href={projects[page].demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               Live Demo <FaExternalLinkAlt className="w-4 h-4" />
             </a>
@@ -139,7 +142,7 @@ const ProjectBook: React.FC<ProjectBookProps> = ({ projects }) => {
             href={projects[page].codeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 text-white rounded-full font-semibold hover:bg-gray-600 transition"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 text-white rounded-full font-semibold hover:bg-gray-600 transition-all duration-300 hover:scale-105 hover:shadow-lg"
           >
             Code <FaGithub className="w-4 h-4" />
           </a>

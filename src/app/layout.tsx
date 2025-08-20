@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from './components/Navbar';
 import StructuredData from './components/StructuredData';
+import ThemeProvider from './components/ThemeProvider';
 
 export const metadata: Metadata = {
   title: 'Natnael Darsema | Website Developer',
@@ -19,8 +20,10 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className="min-h-screen bg-gray-900">
-        <Navbar />
-        {children}
+        <ThemeProvider>
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

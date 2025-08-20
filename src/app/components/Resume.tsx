@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import CodeBackground from './CodeBackground';
 
 export default function Resume() {
   const experience = [
@@ -63,14 +64,17 @@ export default function Resume() {
   ];
 
   return (
-    <section id="resume" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
+    <section id="resume" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 relative overflow-hidden">
+      <div className="dark:block hidden">
+        <CodeBackground />
+      </div>
       <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 relative z-10"
         >
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
             Resume & Experience
@@ -80,7 +84,7 @@ export default function Resume() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8 relative z-10">
           {/* Experience */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
@@ -89,15 +93,15 @@ export default function Resume() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-2"
           >
-            <div className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700">
+            <div className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700 hover:border-blue-500/50 transition-all duration-500">
               <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6 flex items-center">
                 <span className="text-3xl mr-3">💼</span>
                 Professional Experience
               </h3>
               <div className="space-y-8">
                 {experience.map((exp, index) => (
-                  <div key={index} className="relative pl-8 border-l-2 border-blue-500">
-                    <div className="absolute -left-2.5 top-0 w-5 h-5 bg-blue-500 rounded-full"></div>
+                  <div key={index} className="relative pl-8 border-l-2 border-blue-500 hover:border-purple-500 transition-colors duration-500">
+                    <div className="absolute -left-2.5 top-0 w-5 h-5 bg-blue-500 rounded-full hover:bg-purple-500 transition-colors duration-500 hover:scale-125"></div>
                     <div className="mb-2">
                       <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200">{exp.title}</h4>
                       <p className="text-blue-600 dark:text-blue-400 font-medium">{exp.company}</p>
@@ -127,7 +131,7 @@ export default function Resume() {
             className="space-y-8"
           >
             {/* Education */}
-            <div className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700">
+            <div className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700 hover:border-green-500/50 transition-all duration-500">
               <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6 flex items-center">
                 <span className="text-3xl mr-3">🎓</span>
                 Education
@@ -145,14 +149,14 @@ export default function Resume() {
             </div>
 
             {/* Certifications */}
-            <div className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700">
+            <div className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700 hover:border-yellow-500/50 transition-all duration-500">
               <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6 flex items-center">
                 <span className="text-3xl mr-3">🏆</span>
                 Certifications
               </h3>
               <div className="space-y-4">
                 {certifications.map((cert, index) => (
-                  <div key={index} className="p-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg border border-blue-200 dark:border-blue-800 hover:shadow-lg transition-shadow duration-300">
+                  <div key={index} className="p-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg border border-blue-200 dark:border-blue-800 hover:shadow-lg hover:scale-105 transition-all duration-300">
                     <div className="flex items-start gap-4">
                       {cert.image && (
                         <div className="flex-shrink-0">
@@ -200,10 +204,11 @@ export default function Resume() {
           <a
             href="/Natnael Darsema_  Resume.pdf"
             download
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:scale-105 hover:shadow-2xl transition-all duration-300"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:scale-105 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
           >
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <span className="text-2xl mr-3">📄</span>
-            Download Full Resume (PDF)
+            <span className="relative z-10">Download Full Resume (PDF)</span>
           </a>
         </motion.div>
       </div>
