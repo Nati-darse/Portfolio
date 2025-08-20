@@ -85,12 +85,12 @@ const projects = [
 
 
   {
-    title: 'School Management System',
+    title: ' Warka School Management System',
     description: 'Comprehensive school management solution streamlining administrative workflows for educational institutions.',
     tags: ['Education', 'Admin', 'Management'],
-    demoUrl: '#',
+    demoUrl: 'https://warka-acadamy.vercel.app/',
     codeUrl: 'https://github.com/Nati-darse/school-management-system',
-    image: '/vercel.svg',
+    image: '/projects/warka.png',
     features: [
       'Student Management',
       'Teacher Portal',
