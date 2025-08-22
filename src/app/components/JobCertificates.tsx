@@ -3,49 +3,61 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import CodeBackground from './CodeBackground';
+import { Certificate } from 'crypto';
 
 export default function JobCertificates() {
   const jobCertificates = [
     {
-      projectName: 'E-commerce Platform Development',
-      client: 'TechStart Inc.',
-      completionDate: 'December 2024',
-      certificate: '/certificates/ecommerce-completion-cert.png',
-      feedback: 'Exceptional work on our e-commerce platform. Natnael delivered a robust, scalable solution that exceeded our expectations. The project was completed on time and within budget.',
+      projectName: 'UN-ET Gondar chapter website',
+      client: ' UN-ET GOndar chapter',
+      completionDate:'',
+      Certificate:'/public/certificates/fr',
+      feedback: 'The site is simple to use and gives clear information about who we are and what we do. We are happy that it helps us reach more people and share the work of UN-ET UoG, and we appreciate the Natnael’s effort in developing it for us.',
       rating: 5,
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      projectValue: '$'
+      technologies:['React'],
+  
     },
-    {
-      projectName: 'Church Website Redesign',
-      client: 'ABFG Church',
-      completionDate: 'November 2024',
-      certificate: '/certificates/church-website-cert.png',
-      feedback: 'Natnael transformed our outdated website into a modern, responsive platform. His attention to detail and understanding of our needs was outstanding.',
-      rating: 5,
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-      projectValue: '$'
-    },
-    {
-      projectName: 'Event Management System',
-      client: 'EventEasy Solutions',
-      completionDate: 'October 2024',
-      certificate: '/certificates/event-system-cert.png',
-      feedback: 'The event management system Natnael built for us is intuitive and powerful. Our users love the new features and improved user experience.',
-      rating: 5,
-      technologies: ['React', 'Express', 'MongoDB', 'Socket.io'],
-      projectValue: '$'
-    },
-    {
-      projectName: 'School Management Platform',
-      client: 'Education First Academy',
-      completionDate: 'September 2024',
-      certificate: '/certificates/school-management-cert.png',
-      feedback: 'Natnael created a comprehensive school management system that streamlined our administrative processes. The system is reliable and user-friendly.',
-      rating: 5,
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'JWT'],
-      projectValue: '$'
-    }
+
+    // {
+    //   projectName: 'E-commerce Platform Development',
+    //   client: 'TechStart Inc.',
+    //   completionDate: 'December 2024',
+    //   certificate: '/certificates/ecommerce-completion-cert.png',
+    //   feedback: 'Exceptional work on our e-commerce platform. Natnael delivered a robust, scalable solution that exceeded our expectations. The project was completed on time and within budget.',
+    //   rating: 5,
+    //   technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    //   projectValue: '$'
+    // },
+    // {
+    //   projectName: 'Church Website Redesign',
+    //   client: 'ABFG Church',
+    //   completionDate: 'November 2024',
+    //   certificate: '/certificates/church-website-cert.png',
+    //   feedback: 'Natnael transformed our outdated website into a modern, responsive platform. His attention to detail and understanding of our needs was outstanding.',
+    //   rating: 5,
+    //   technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+    //   projectValue: '$'
+    // },
+    // {
+    //   projectName: 'Event Management System',
+    //   client: 'EventEasy Solutions',
+    //   completionDate: 'October 2024',
+    //   certificate: '/certificates/event-system-cert.png',
+    //   feedback: 'The event management system Natnael built for us is intuitive and powerful. Our users love the new features and improved user experience.',
+    //   rating: 5,
+    //   technologies: ['React', 'Express', 'MongoDB', 'Socket.io'],
+    //   projectValue: '$'
+    // },
+    // {
+    //   projectName: 'School Management Platform',
+    //   client: 'Education First Academy',
+    //   completionDate: 'September 2024',
+    //   certificate: '/certificates/school-management-cert.png',
+    //   feedback: 'Natnael created a comprehensive school management system that streamlined our administrative processes. The system is reliable and user-friendly.',
+    //   rating: 5,
+    //   technologies: ['React', 'Node.js', 'PostgreSQL', 'JWT'],
+    //   projectValue: '$'
+    // }
   ];
 
   const renderStars = (rating: number) => {
@@ -93,11 +105,11 @@ export default function JobCertificates() {
                 <div className="flex-shrink-0 relative z-10">
                   <div className="relative w-48 h-32 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg border-2 border-blue-200 dark:border-blue-700 overflow-hidden">
                     <Image
-                      src={cert.certificate}
+                      src={cert.Certificate}
                       alt={`${cert.projectName} completion certificate`}
                       fill
                       className="object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
-                      onClick={() => window.open(cert.certificate, '_blank')}
+                      onClick={() => window.open(cert.Certificate, '_blank')}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     <div className="absolute bottom-2 left-2 text-white text-xs font-semibold">
@@ -155,11 +167,11 @@ export default function JobCertificates() {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           <div className="text-center">
-            <div className="text-4xl font-bold text-green-600 dark:text-green-400 mb-2">4</div>
+            <div className="text-4xl font-bold text-green-600 dark:text-green-400 mb-2">1</div>
             <div className="text-gray-600 dark:text-gray-300">Certified Projects</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">$55.5K</div>
+            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">$</div>
             <div className="text-gray-600 dark:text-gray-300">Total Project Value</div>
           </div>
           <div className="text-center">

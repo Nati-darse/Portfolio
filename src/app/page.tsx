@@ -101,20 +101,22 @@ const projects = [
     techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'JavaScript']
   },
   {
-    title: 'GitHub Clone Project',
-    description: 'A GitHub-inspired project showcasing modern web development practices and UI/UX design.',
-    tags: ['UI/UX', 'Clone', 'Design'],
+    title: 'MedFayda',
+    description: 'Centralized Health Records System : A comprehensive healthcare management platform for Ethiopia.',
+    tags: ['UI/UX', 'Clone', 'Design','national_ID_validation'],
     demoUrl: '#',
-    codeUrl: 'https://github.com/Nati-darse/GitHubCloneProject',
+    codeUrl: 'https://github.com/Nati-darse/MedFayda.git',
     image: '/file.svg',
     features: [
-      'GitHub-like Interface',
-      'Repository Management',
-      'User Profiles',
+      'Fayda ID Integration',
+      'SMS Authentication',
+      'Doctor and Patient Portal',
+      'Medical Records',
+      'Profile Management',
       'Responsive Design',
-      'Modern UI Components'
+      'Cross-Hospital Access'
     ],
-    techStack: ['React', 'JavaScript', 'CSS', 'HTML']
+    techStack: ['React 18','Next.js 14', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'JWT authentication']
   },
   {
     title: 'Misgana Music Player',

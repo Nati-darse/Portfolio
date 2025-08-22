@@ -12,7 +12,18 @@ export default function Resume() {
       period: '2023 - Present',
       description: 'Building scalable web applications for clients across various industries, specializing in React, Node.js, and modern web technologies.',
       achievements: [
-        'Developed 8+ full-stack applications with modern tech stack',
+        'Developed full-stack applications with modern tech stack',
+        'Improved application performance by 40% through optimization',
+        'Collaborated with 5+ clients to deliver custom solutions'
+      ]
+    },
+    {
+      title: 'UN-ET ondar  Developer',
+      company: 'Organization Contract ',
+      period: 'Feb 2025 - Mar 2025',
+      description: 'Building scalable web applications for clients across various industries, specializing in React, Node.js, and modern web technologies.',
+      achievements: [
+        'Developed full-stack applications with modern tech stack',
         'Improved application performance by 40% through optimization',
         'Collaborated with 5+ clients to deliver custom solutions'
       ]
@@ -47,20 +58,7 @@ export default function Resume() {
       link: 'https://member.theroom.com/alx',
       image: '/certificates/front-end-web-development-certificate-natnael-darsema.png' // Add your certificate image path here
     },
-    {
-      name: 'JavaScript Algorithms and Data Structures',
-      issuer: 'freeCodeCamp',
-      date: '2023',
-      link: '#',
-      image: '/certificates/javascript-certificate.jpg' // Add your certificate image path here
-    },
-    {
-      name: 'Responsive Web Design',
-      issuer: 'freeCodeCamp',
-      date: '2022',
-      link: '#',
-      image: '/certificates/web-design-certificate.jpg' // Add your certificate image path here
-    }
+    
   ];
 
   return (

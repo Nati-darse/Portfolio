@@ -10,27 +10,27 @@ interface Skill {
 
 const skillsData: Skill[] = [
   { name: 'React', level: 90, category: 'Frontend' },
-  { name: 'Next.js', level: 85, category: 'Frontend' },
+  { name: 'Next.js', level: 65, category: 'Frontend' },
   { name: 'TypeScript', level: 60, category: 'Frontend' },
   { name: 'Tailwind CSS', level: 85, category: 'Frontend' },
   { name: 'Node.js', level: 75, category: 'Backend' },
   { name: 'Express', level: 70, category: 'Backend' },
   { name: 'MongoDB', level: 65, category: 'Backend' },
-  { name: 'PostgreSQL', level: 60, category: 'Backend' },
+  { name: 'PostgreSQL', level: 70, category: 'Backend' },
 ];
 
 export default function Skills() {
   const categories = [...new Set(skillsData.map(skill => skill.category))];
 
   return (
-    <section id="skills" className="py-20 bg-gray-50">
+    <section id="skills" className="py-20 bg-gray-850">
       <div className="container mx-auto px-4">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-center mb-16 text-gray-800"
+          className="text-5xl font-bold text-center mb-16 text-purple-500"
         >
           Skills & Technologies
         </motion.h2>
@@ -44,7 +44,7 @@ export default function Skills() {
             transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
             className="mb-12"
           >
-            <h3 className="text-2xl font-semibold mb-6 text-gray-700">{category}</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-blue-600">{category}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {skillsData
                 .filter(skill => skill.category === category)
