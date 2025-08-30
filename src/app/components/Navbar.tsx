@@ -38,7 +38,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <Link 
               href="/#projects" 
-              className="relative group text-gray-600 dark:text-gray-300 hover:text-blue-400 font-medium transition-colors duration-300"
+              className="relative group text-black dark:text-gray-300 hover:text-blue-400 font-medium transition-colors duration-300"
             >
               Projects
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
@@ -118,7 +118,7 @@ export default function Navbar() {
           <div className="py-4 space-y-4 border-t border-gray-200 dark:border-gray-700 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg rounded-b-lg">
             <Link 
               href="/#projects" 
-              className="block text-gray-600 dark:text-gray-300 hover:text-blue-400 font-medium transition-colors duration-300 px-4"
+              className="block text-black dark:text-gray-300 hover:text-blue-400 font-medium transition-colors duration-300 px-4"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Projects
@@ -158,7 +158,7 @@ export default function Navbar() {
                 setTheme(theme === 'dark' ? 'light' : 'dark');
                 setIsMobileMenuOpen(false);
               }}
-              className="block w-full text-left px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-blue-400 font-medium transition-colors duration-300"
+              className="block w-full text-left px-4 py-2 text-black dark:text-gray-300 hover:text-blue-400 font-medium transition-colors duration-300"
             >
               {theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode'}
             </button>

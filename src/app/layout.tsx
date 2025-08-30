@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from './components/Navbar';
 import StructuredData from './components/StructuredData';
-import {ThemeProvider}  from './components/ThemeProvider';
+import { ThemeProvider } from './components/ThemeProvider';
 
 export const metadata: Metadata = {
   title: 'Natnael Darsema | Website Developer',
@@ -19,7 +19,7 @@ export default function RootLayout({
       <head>
         <StructuredData />
       </head>
-      <body className="min-h-screen bg-gray-900">
+  <body className="min-h-screen bg-white dark:bg-gray-900">
         <ThemeProvider>
           <Navbar />
           {children}
