@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import CodeBackground from './CodeBackground';
-import { Certificate } from 'crypto';
+// import { Certificate } from 'crypto';
 
 export default function JobCertificates() {
   const jobCertificates = [
