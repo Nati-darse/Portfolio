@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
     const { data, error } = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>', // You can change this after domain verification
       to: 'natnaeldarsema@gmail.com',
-      reply_to: email,
+      replyTo: email,
       subject: `New Portfolio Message from ${name}`,
       html: `
         <!DOCTYPE html>
