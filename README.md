@@ -20,7 +20,7 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Icons**: Custom emoji icons and SVG
-- **Deployment**: Vercel (recommended)
+- **Deployment**: Vercel 
 
 ## 📁 Project Structure
 
