@@ -18,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <StructuredData />
+        <link rel="icon" href="/NP.jpg" type="image/jpg" />
       </head>
   <body className="min-h-screen bg-white dark:bg-gray-900">
         <ThemeProvider>
