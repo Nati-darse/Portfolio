@@ -29,7 +29,7 @@ src/
 ├── app/
 │   ├── components/
 │   │   ├── About.tsx          # About section component
-│   │   ├── Blog.tsx           # Blog articles section
+│   │   ├──
 │   │   ├── Contact.tsx        # Contact form component
 │   │   ├── DarkModeToggle.tsx # Dark mode toggle
 │   │   ├── Footer.tsx         # Footer component
