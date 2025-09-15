@@ -14,7 +14,7 @@ export default function JobCertificates() {
       feedback: 'The site is simple to use and gives clear information about who we are and what we do. We are happy that it helps us reach more people and share the work of UN-ET UoG, and we appreciate the Natnael’s effort in developing it for us.',
       rating: 5,
       technologies:['React'],
-  
+      projectValue: "$"
     },
 
     // {
