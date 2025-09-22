@@ -1,8 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import CodeBackground from './CodeBackground';
+
+// EmailJS configuration
+const EMAILJS_SERVICE_ID = 'service_portfolio';
+const EMAILJS_TEMPLATE_ID = 'template_contact';
+const EMAILJS_PUBLIC_KEY = 'YOUR_EMAILJS_PUBLIC_KEY'; // You'll need to replace this
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,6 +17,95 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [emailJS, setEmailJS] = useState<any>(null);
+
+  // Load EmailJS dynamically
+  useEffect(() => {
+    const loadEmailJS = async () => {
+      try {
+        const emailjs = await import('@emailjs/browser');
+        setEmailJS(emailjs);
+      } catch (error) {
+        console.error('Failed to load EmailJS:', error);
+      }
+    };
+    loadEmailJS();
+  }, []);
+
+  const sendEmailDirectly = async () => {
+    try {
+      // Use Web3Forms (free service) as primary method
+      const web3FormsResponse = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'YOUR_WEB3FORMS_KEY', // You'll get this from web3forms.com
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          to: 'natnaeldarsema@gmail.com',
+          subject: `Portfolio Contact from ${formData.name}`,
+          from_name: 'Portfolio Website'
+        })
+      });
+
+      if (web3FormsResponse.ok) {
+        return { success: true, method: 'Web3Forms' };
+      }
+      throw new Error('Web3Forms failed');
+    } catch (error) {
+      console.error('Web3Forms failed:', error);
+      
+      // Fallback to Formspree
+      try {
+        const formspreeResponse = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            _replyto: formData.email,
+            _subject: `Portfolio Contact from ${formData.name}`
+          })
+        });
+
+        if (formspreeResponse.ok) {
+          return { success: true, method: 'Formspree' };
+        }
+        throw new Error('Formspree failed');
+      } catch (formspreeError) {
+        console.error('Formspree failed:', formspreeError);
+        
+        // Final fallback to EmailJS if available
+        if (emailJS && EMAILJS_PUBLIC_KEY !== 'YOUR_EMAILJS_PUBLIC_KEY') {
+          try {
+            await emailJS.send(
+              EMAILJS_SERVICE_ID,
+              EMAILJS_TEMPLATE_ID,
+              {
+                from_name: formData.name,
+                from_email: formData.email,
+                message: formData.message,
+                to_email: 'natnaeldarsema@gmail.com'
+              },
+              EMAILJS_PUBLIC_KEY
+            );
+            return { success: true, method: 'EmailJS' };
+          } catch (emailJSError) {
+            console.error('EmailJS failed:', emailJSError);
+          }
+        }
+        
+        throw new Error('All email services failed');
+      }
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,6 +113,7 @@ export default function Contact() {
     setSubmitStatus('idle');
     
     try {
+      // First validate with our API
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -27,29 +122,24 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
+      if (!response.ok) {
+        const result = await response.json();
+        throw new Error(result.error || 'Validation failed');
+      }
 
-      if (response.ok) {
-        if (result.useMailto && result.mailtoData) {
-          // Use mailto fallback
-          const { to, subject, body } = result.mailtoData;
-          const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-          window.open(mailtoLink, '_blank');
-        }
+      // Then send the actual email
+      const emailResult = await sendEmailDirectly();
+      
+      if (emailResult.success) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', message: '' });
+        console.log(`Email sent successfully via ${emailResult.method}`);
       } else {
-        throw new Error(result.error || 'Failed to send message');
+        throw new Error('Failed to send email');
       }
     } catch (error) {
       console.error('Error sending message:', error);
-      // Fallback to mailto
-      const subject = `Portfolio Contact from ${formData.name}`;
-      const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-      const mailtoLink = `mailto:natnaeldarsema@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.open(mailtoLink, '_blank');
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+      setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
@@ -90,6 +180,16 @@ export default function Contact() {
               className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-center"
             >
               ✅ Message sent successfully! I&apos;ll get back to you soon.
+            </motion.div>
+          )}
+
+          {submitStatus === 'error' && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="mb-6 p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-center"
+            >
+              ❌ Failed to send message. Please try again or contact me directly at natnaeldarsema@gmail.com
             </motion.div>
           )}
 
