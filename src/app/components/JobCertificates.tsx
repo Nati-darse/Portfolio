@@ -149,7 +149,7 @@ export default function JobCertificates() {
                   </div>
 
                   <blockquote className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed italic">
-                    &ldquo;{cert.feedback}&rdquo;
+                  {' {cert.feedback}'}
                   </blockquote>
                 </div>
               </div>
