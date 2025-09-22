@@ -19,23 +19,27 @@ export default function Contact() {
     setSubmitStatus('idle');
     
     try {
-      // Send email using EmailJS or similar service
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...formData,
-          to: 'natnaeldarsema@gmail.com'
-        }),
+        body: JSON.stringify(formData),
       });
 
+      const result = await response.json();
+
       if (response.ok) {
+        if (result.useMailto && result.mailtoData) {
+          // Use mailto fallback
+          const { to, subject, body } = result.mailtoData;
+          const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          window.open(mailtoLink, '_blank');
+        }
         setSubmitStatus('success');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        throw new Error('Failed to send message');
+        throw new Error(result.error || 'Failed to send message');
       }
     } catch (error) {
       console.error('Error sending message:', error);
